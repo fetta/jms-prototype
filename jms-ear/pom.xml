@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>pl.jony.maven</groupId>
+    <artifactId>jms-prototype</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>jms-ear</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>ear</packaging>
+  <name>jms-ear</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>
+    <dependency>
+        <groupId>pl.jony.maven</groupId>
+        <artifactId>jms-ejb</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <type>ejb</type>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+        <plugin>
+            <artifactId>maven-ear-plugin</artifactId>
+            <configuration>
+                <version>1.4</version>
+                <modules>
+                    <ejbModule>
+                        <groupId>pl.jony.maven</groupId>
+                        <artifactId>jms-ejb</artifactId>
+                        <bundleFileName>jms-ejb.jar</bundleFileName>
+                    </ejbModule>
+                </modules>
+                <displayName>jms-prototype</displayName>
+                <!-- If I want maven to generate the application.xml, set this to true -->
+                <generateApplicationXml>true</generateApplicationXml>
+            </configuration>
+        </plugin>
+    </plugins>
+  </build>
+</project>

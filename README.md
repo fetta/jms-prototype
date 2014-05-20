@@ -12,3 +12,5 @@ To make it work you have to create JMS resources:
 - Activation Specification named "ActivationSpecification"
 
 Also you have to correctly map these resources when you deploy this package to application server.
+
+The messages and prints to SystemOut are in polish, but there is no important information there so it doesn't matter I hope.
